@@ -12,6 +12,9 @@ package org.kishan;
  * 		- Add  arr[currentIndex] to sum
  * 		- update maxSum if sum is greater than
  * 	- return maxSum
+ *
+ * 	Time : O(n)
+ * 	Space : O(1)
  */
 
 public class MaxSubArray {

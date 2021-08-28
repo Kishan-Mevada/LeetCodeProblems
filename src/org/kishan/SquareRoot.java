@@ -19,6 +19,9 @@ package org.kishan;
  * 		  	right = mid + 1
  *
  *   return left ,->  left * left will be largest square that is less than x
+ *
+ *   Time : O(log n)
+ *   Space : O(1)
  */
 
 public class SquareRoot {

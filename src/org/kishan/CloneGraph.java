@@ -24,6 +24,11 @@ import java.util.HashMap;
  * - recursively clone neighbor
  * - add cloned neighbor to the list of neighbors of clone node
  * return clone
+ *
+ * Time : O(n + e) , visit all nodes and edges
+ * Space : O(n + e) + O(n) + O(n) = O(n + 2), n,e are number of nodes and edge
+ * 		O(n) = recursive call stack
+ * 		O(n) = map
  */
 public class CloneGraph {
 	static GraphNode cloneGraph(GraphNode node) {

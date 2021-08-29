@@ -23,6 +23,8 @@ import java.util.Set;
  *
  *  return max
  *
+ *  Time : O(n)
+ *  Space : O(k), where k is number of unique chars
  */
 public class LongestSubString {
 

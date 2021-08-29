@@ -117,6 +117,6 @@ public class DecodeWays {
 
 	public static void main(String[] args) {
 		String input = "226";
-		System.out.println("No of ways to decode -> " + numDecodingsMemo(input));
+		System.out.println("No of ways to decode -> " + numDecodings(input));
 	}
 }

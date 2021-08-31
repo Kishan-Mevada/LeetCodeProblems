@@ -17,7 +17,7 @@ package org.kishan.year_2021.month_august.date_31;
  * 	Space : O(1)
  */
 
-public class MaxSubArray {
+public class MaxSumSubArray {
 
 	static int maxSum(int[] nums){
 		int sum = 0, maxSum = Integer.MIN_VALUE;

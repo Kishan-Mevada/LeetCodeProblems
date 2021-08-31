@@ -36,7 +36,7 @@ public class AddTwoNumbers {
 			int num2 = l2 == null ? 0 : l2.getValue();
 			int sum = num1 + num2 + carry;
 			append(sum % 10);
-			carry = sum > 9 ? 1 : 0;
+			carry = sum / 10;
 			if (l1 != null) l1 = l1.getNext();
 			if (l2 != null) l2 = l2.getNext();
 		}
@@ -52,7 +52,7 @@ public class AddTwoNumbers {
 		tail = node;
 	}
 	public static void main(String[] args) {
-		Node l1 = new Node(2,new Node(4,new Node(3)));
+		Node l1 = new Node(9,new Node(5,new Node(3)));
 		Node l2 = new Node(5,new Node(6,new Node(4)));
 		System.out.println("Sum of two linked list");
 		Node sum = addTwoNumbers(l1, l2);

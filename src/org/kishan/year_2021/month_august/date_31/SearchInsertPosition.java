@@ -10,6 +10,8 @@ package org.kishan.year_2021.month_august.date_31;
  * [1,3,5,6]		7				4
  * [1,3,5,6]		0				0
  *
+ *  Time : O(log n)
+ *  Space : O(1)
  */
 public class SearchInsertPosition {
 

@@ -45,7 +45,7 @@ public class Permutation {
 	}
 	private static void permute(int[] nums, boolean[] used, ArrayList<Integer> permutation, List<List<Integer>> result) {
 		if(permutation.size() == nums.length){
-			result.add(new ArrayList(permutation));
+			result.add(new ArrayList<>(permutation));
 			return;
 		}
 
@@ -59,6 +59,8 @@ public class Permutation {
 			permutation.remove(permutation.size()-1);
 		}
 	}
+
+
 	public static void main(String[] args) {
 		int[] nums = {1,2,3};
 		System.out.println("Permutation -> " + permutations(nums));

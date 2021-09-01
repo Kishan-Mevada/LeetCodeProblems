@@ -25,24 +25,20 @@ public class ValidSudoku {
 		return true;
 	}
 	private static String stringfy(String box, int row, int col, char val) {
-		String s=  new StringBuilder(box)
+		return new StringBuilder(box)
 				.append("-")
 				.append(row)
 				.append("-")
 				.append(col)
 				.append("#")
 				.append(val).toString();
-		System.out.println(s);
-		return s;
 	}
 	private static String stringfy(String direction, int row, char val) {
-		String s = new StringBuilder(direction)
+		return new StringBuilder(direction)
 				.append("-")
 				.append(row)
 				.append("#")
 				.append(val).toString();
-		System.out.println(s);
-		return s;
 	}
 	public static void main(String[] args) {
 		char[][] board ={
@@ -50,7 +46,7 @@ public class ValidSudoku {
 				{'6','.','.','1','9','5','.','.','.'},
 				{'.','9','8','.','.','.','.','6','.'},
 				{'8','.','.','.','6','.','.','.','3'},
-				{'4','.','.','8','8','3','.','.','1'},
+				{'4','.','.','8','.','3','.','.','1'},
 				{'7','.','.','.','2','.','.','.','6'},
 				{'.','6','.','.','.','.','2','8','.'},
 				{'.','.','.','4','1','9','.','.','5'},

@@ -48,7 +48,7 @@ public class MaxProfitBuySellStock1 {
 		return profit;
 	}
 	public static void main(String[] args) {
-		int[] prices = {7,1,5,3,6,4};
+		int[] prices = {1, 25, 24, 23, 12, 36, 14, 40, 31, 41, 5};
 		System.out.println("Max Profit -> " + maxProfit(prices));
 	}
 }

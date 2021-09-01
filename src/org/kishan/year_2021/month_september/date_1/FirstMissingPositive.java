@@ -33,12 +33,9 @@ public class FirstMissingPositive {
 		for(int i =0; i< nums.length; i++){
 			int num = nums[i];
 			nums[i] = 0;
-
-			while(true){
-				if( num < 1 || num > nums.length || num == nums[num-1]) break;
-
-				int temp = nums[num-1];
-				nums[num-1] = num;
+			while(num >= 1 && num <= nums.length && num != nums[num - 1]) {
+				int temp = nums[num - 1];
+				nums[num - 1] = num;
 				num = temp;
 			}
 		}
@@ -51,7 +48,7 @@ public class FirstMissingPositive {
 		return nums.length + 1;
 	}
 	public static void main(String[] args) {
-		int[] nums = {7,8,9};
+		int[] nums = {1,2,3};
 		System.out.println("First Missing Positive -> " + firstMissingPositive(nums));
 	}
 }

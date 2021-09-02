@@ -1,4 +1,4 @@
-package org.kishan.year_2021.month_september.date_1;
+package org.kishan.year_2021.month_september.date_2;
 
 /**
  * 	Given m * n grid filled with no-negative numbers, find the path from top-left to bottom-right

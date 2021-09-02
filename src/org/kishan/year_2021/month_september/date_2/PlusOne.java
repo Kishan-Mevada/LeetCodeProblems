@@ -26,7 +26,7 @@ import java.util.LinkedList;
  * - return convert linked list to array
  *
  * 	-- Time : O(n)
- * 	-- Space : O(n)
+ * 	-- Space : O(2*n) , linked list and converted array
  */
 public class PlusOne {
 
@@ -38,11 +38,12 @@ public class PlusOne {
 			carry = sum / 10;
 			result.addFirst(sum % 10);
 		}
+		if(carry != 0) result.addFirst(carry);
 		return result.stream().mapToInt(x -> x).toArray();
 	}
 
 	public static void main(String[] args) {
-		int[] digits = {1,2,9};
+		int[] digits = {1,2,3};
 		System.out.println("Plus One -> " + Arrays.toString(plusOne(digits)));
 	}
 }

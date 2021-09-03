@@ -21,6 +21,7 @@ package org.kishan.year_2021.month_september.date_2;
  *			- j , current index of word2
  *			- word1, input word
  *			- word2, input word
+ *			- memo, 2D matrix to keep track of minOps
  *
  *	   - base conditions
  *	   		if i and j both out of bound
@@ -29,9 +30,11 @@ package org.kishan.year_2021.month_september.date_2;
  *	   			- return word2.length - j  // we have only insertion
  *	   		if j out of bound
  *	   			- return word1.length - i // we have only deletion
+ *	   		if memo[i][j] != 0
+ *	   			- return memo[i][j]
  *	   - In each recursive call
  *	   		- if index at i and j, character are same
- *	   			- then we can move forward both i and j
+ *	   			- then we can move forward both i and j and put value into memo[i][j]
  *	   		- else
  *		   		- recursively find the number of operations ops1 if we perform insert (if we insert a character inside word1, we need to increment j inside word2)
  *	   				- set j to j + 1
@@ -40,10 +43,10 @@ package org.kishan.year_2021.month_september.date_2;
  *	   			- recursively find the number of operations ops1 if we perform replace (if we replace a character inside word1, we need to increment j and i inside word2,word1 respectively)
  *	   				- set j to j + 1
  *	   		 		- set i to i + 1
- *	   		 	- return min(ops1,ops2,ops3) + 1
+ *	   		 	- return memo[i][j] = min(ops1,ops2,ops3) + 1
  *
  *	-- Time : O(mn), where m,n are the length of word1 and word2, 3 for we have 3 choices
- *  -- Space : O((mn), memo matrix
+ *  -- Space : O(mn), memo matrix
  *
  *
  */
@@ -59,11 +62,11 @@ public class EditDistanceMemoization {
 		if(i == word1.length() - 1) {
 			return word2.length() - j; // we have only insertion
 		}
-		if(memo[i][j] != 0){
-			return memo[i][j];
-		}
 		if(j == word2.length() - 1) {
 			return word1.length() - i; // we have only deletion
+		}
+		if(memo[i][j] != 0){
+			return memo[i][j];
 		}
 		if(word1.charAt(i) == word2.charAt(j)) {
 			return memo[i][j] =  minDistance(i + 1, j + 1, word1, word2,memo);

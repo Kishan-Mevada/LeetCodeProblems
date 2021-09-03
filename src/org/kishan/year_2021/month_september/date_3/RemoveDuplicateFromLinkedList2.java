@@ -3,6 +3,10 @@ package org.kishan.year_2021.month_september.date_3;
 import org.kishan.utils.Node;
 
 /**
+ * 	Remove all duplicates from linked list
+ * 	 input [1,2,3,3,4,4,5]
+ * 	 output [1,2,5]
+ *
  * 	-- Time : O(n)
  * 	-- Space : O(1)
  *

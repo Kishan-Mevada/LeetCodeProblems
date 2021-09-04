@@ -2,7 +2,7 @@ package org.kishan.year_2021.month_september.date_4;
 
 /**
  * 	-- Time : O(mn)), where m,n are the length of the s1 and s2, 2 for 2 choices
- * 	-- Space : O(mn), 2d matrix
+ * 	-- Space : O(n), array
  */
 public class InterleavingStringBU1 {
 	static boolean isInterLeave(String s1,String s2,String s3){

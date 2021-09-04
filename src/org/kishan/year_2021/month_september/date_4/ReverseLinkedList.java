@@ -5,6 +5,9 @@ import org.kishan.utils.Node;
 /**
  * 		Given head of singly linked list and two integers left and right where left<=right.
  * 		reverse the nodes from left to right and return reverse linkedlist
+ *
+ * 		-- Time = O(n)
+ * 		-- Space = O(1)
  */
 public class ReverseLinkedList {
 

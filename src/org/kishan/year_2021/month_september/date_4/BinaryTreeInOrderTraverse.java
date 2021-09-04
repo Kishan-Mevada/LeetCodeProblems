@@ -40,7 +40,7 @@ public class BinaryTreeInOrderTraverse {
 	 */
 	static List<Integer> inOrderIterative(TreeNode root){
 		if(root == null) return new ArrayList<>();
-		Deque<TreeNode> stack = new ArrayDeque<>();
+		Stack<TreeNode> stack = new Stack<>();
 		List<Integer> result = new ArrayList<>();
 		pushAllNodeOfLeft(root,stack);
 		while(!stack.isEmpty()){
@@ -50,7 +50,7 @@ public class BinaryTreeInOrderTraverse {
 		}
 		return result;
 	}
-	private static void pushAllNodeOfLeft(TreeNode root, Deque<TreeNode> stack) {
+	private static void pushAllNodeOfLeft(TreeNode root, Stack<TreeNode> stack) {
 		for(TreeNode node = root; node != null; node = node.getLeft()){
 			stack.push(node);
 		}

@@ -9,8 +9,8 @@ package org.kishan.year_2021.month_september.date_5;
  */
 public class MaxProfitBuySellStock3BU1 {
 
-	static int maxProfit(int[] prices){
-		int[][] maxProfit = new int[2][3];
+	static int maxProfit(int[] prices,int k){
+		int[][] maxProfit = new int[2][k+1];
 
 		for(int i = prices.length - 1; i >= 0; i--){
 			for(int state = 1; state >= 0; state--){
@@ -29,6 +29,6 @@ public class MaxProfitBuySellStock3BU1 {
 
 	public static void main(String[] args){
 		int[] prices = {3,3,5,0,0,3,1,4};
-		System.out.println("Max Profit -> " + maxProfit(prices));
+		System.out.println("Max Profit -> " + maxProfit(prices,2));
 	}
 }

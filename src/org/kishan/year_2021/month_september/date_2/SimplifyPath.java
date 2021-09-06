@@ -67,7 +67,7 @@ public class SimplifyPath {
 		return result.toString();
 	}
 	public static void main(String[] args) {
-		String path = "/home//foo/";
+		String path = "/home/";
 		System.out.println("Simplified Path -> " + simplifyPath(path));
 	}
 }

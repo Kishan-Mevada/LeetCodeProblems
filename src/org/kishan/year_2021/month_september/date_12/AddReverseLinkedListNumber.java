@@ -13,6 +13,8 @@ package org.kishan.year_2021.month_september.date_12;
  */
 public class AddReverseLinkedListNumber {
 
+	static Node head = null;
+
 	static class Node{
 		int val;
 		Node next;
@@ -79,23 +81,56 @@ public class AddReverseLinkedListNumber {
 		return head;
 	}
 
+	static Node addLLNumberConstSpace(Node l1,Node l2){
+		head = null;
+		int carry = addRecursive(l1,l2);
+		if(carry > 0) appendNode(carry);
+		return head;
+	}
+	private static int addRecursive(Node l1, Node l2) {
+		if(l1 == null && l2 == null) return 0;
+		int n1 = l1 != null ? l1.val : 0;
+		int n2 = l2 != null ? l2.val : 0;
+
+		if(l1 != null) l1 = l1.next;
+		if(l2 != null) l2 = l2.next;
+		int sum = n1 + n2 + addRecursive(l1,l2);
+		appendNode(sum % 10);
+		return sum / 10;
+	}
+
+	private static void appendNode(int val){
+		 Node node = new Node(val);
+		 node.next = head;
+		 head = node;
+	}
+
 	public static void main(String[] args) {
 		//case 1
 		Node l1 = new Node(3,new Node(4,new Node(2)));
 		Node l2 = new Node(4,new Node(6,new Node(5)));
-		System.out.println("Case 1 -> " + l1 + " + " + l2 + " = "  + addLLNumber(l1,l2));
+		//System.out.println("Case 1 -> " + l1 + " + " + l2 + " = "  + addLLNumber(l1,l2));
+		System.out.println("Case 1 (Recursive)-> " + l1 + " + " + l2 + " = "  + addLLNumberConstSpace(l1,l2));
+		System.out.println("=================");
 		//case 2
 		l1 = new Node(2,new Node(6,new Node(3,new Node(4))));
 		l2 = new Node(5,new Node(6,new Node(4)));
-		System.out.println("Case 1 -> " + l1 + " + " + l2 + " = "  + addLLNumber(l1,l2));
+		//System.out.println("Case 2 -> " + l1 + " + " + l2 + " = "  + addLLNumber(l1,l2));
+		System.out.println("Case 2 (Recursive)-> " + l1 + " + " + l2 + " = "  + addLLNumberConstSpace(l1,l2));
+		System.out.println("=================");
 		//case 3
 		l1 = new Node(0);
 		l2 = new Node(0);
-		System.out.println("Case 1 -> " + l1 + " + " + l2 + " = "  + addLLNumber(l1,l2));
+		//System.out.println("Case 3 -> " + l1 + " + " + l2 + " = "  + addLLNumber(l1,l2));
+		System.out.println("Case 3 (Recursive)-> " + l1 + " + " + l2 + " = "  + addLLNumberConstSpace(l1,l2));
+		System.out.println("=================");
 		//case 4
 		l1 = new Node(9);
 		l2 = new Node(1);
-		System.out.println("Case 1 -> " + l1 + " + " + l2 + " = "  + addLLNumber(l1,l2));
+		//System.out.println("Case 4 -> " + l1 + " + " + l2 + " = "  + addLLNumber(l1,l2));
+		System.out.println("Case 4 (Recursive)-> " + l1 + " + " + l2 + " = "  + addLLNumberConstSpace(l1,l2));
+		System.out.println("=================");
 	}
 
 }
+

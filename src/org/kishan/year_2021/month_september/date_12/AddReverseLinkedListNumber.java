@@ -49,8 +49,7 @@ public class AddReverseLinkedListNumber {
 	 	 l1 = reverseLL(l1);
 		 l2 = reverseLL(l2);
 
-		 Node head = new Node();
-		 Node tail = head;
+		 Node head = null;
 		 int carry = 0;
 
 		 while(l1 != null || l2 != null){
@@ -58,17 +57,20 @@ public class AddReverseLinkedListNumber {
 			 int n2 = l2 != null ? l2.val: 0;
 
 			 int sum = n1 + n2 + carry;
-			 tail.next = new Node(sum % 10);
-			 tail = tail.next;
+			 Node node = new Node(sum % 10);
+			 node.next = head;
+			 head = node;
 			 carry = sum / 10;
 
 			 if(l1 != null) l1 = l1.next;
 			 if(l2 != null) l2 = l2.next;
 		 }
 		 if(carry > 0){
-			 tail.next = new Node(carry);
+			 Node node = new Node(carry);
+			 node.next = head;
+			 head = node;
 		}
-		 return reverseLL(head.next);
+		 return head;
 	}
 	private static Node reverseLL(Node node) {
 	 	Node head = null;
@@ -109,8 +111,8 @@ public class AddReverseLinkedListNumber {
 		//case 1
 		Node l1 = new Node(3,new Node(4,new Node(2)));
 		Node l2 = new Node(4,new Node(6,new Node(5)));
-		//System.out.println("Case 1 -> " + l1 + " + " + l2 + " = "  + addLLNumber(l1,l2));
-		System.out.println("Case 1 (Recursive)-> " + l1 + " + " + l2 + " = "  + addLLNumberConstSpace(l1,l2));
+		System.out.println("Case 1 -> " + l1 + " + " + l2 + " = "  + addLLNumber(l1,l2));
+		//System.out.println("Case 1 (Recursive)-> " + l1 + " + " + l2 + " = "  + addLLNumberConstSpace(l1,l2));
 		System.out.println("=================");
 		//case 2
 		l1 = new Node(2,new Node(6,new Node(3,new Node(4))));

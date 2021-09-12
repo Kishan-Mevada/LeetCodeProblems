@@ -45,7 +45,7 @@ public class SquareRoot {
 		return (int) left;
 	}
 	public static void main(String[] args) {
-		int x = 5;
+		int x = 13;
 		System.out.println(sqrt(x));
 	}
 }
